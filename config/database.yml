@@ -1,0 +1,22 @@
+# config/database.yml
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+  host: localhost
+
+development:
+  <<: *default
+  database: family_tree_dev
+
+test:
+  <<: *default
+  database: family_tree_test
+
+production:
+  <<: *default
+  database: family_tree_prod
+  username: <
