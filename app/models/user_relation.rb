@@ -16,24 +16,26 @@ class UserRelation < ApplicationRecord
   after_create :create_inverse
 
   def create_inverse
-    inverse = case relation_as.to_sym
-    when :father then :child
-    when :mother then :child
-    when :child
-                if relation.gender == "male"
-                  :father
-                elsif relation.gender == "female"
-                  :mother
-                end
-    when :spouse then :spouse
-    when :sibling then :sibling
-    when :cousin then :cousin
-    else
-      nil
-    end
-
-    if inverse && !UserRelation.exists?(user: relation, relation: user)
-      UserRelation.create(user: relation, relation: user, relation_as: inverse)
-    end
+  inverse_as = case relation_as.to_sym
+  when :father, :mother then :child
+  when :child
+                  case relation.gender
+                  when "male" then :father
+                  when "female" then :mother
+                  else nil
+                  end
+  when :spouse then :spouse
+  when :sibling then :sibling
+  when :cousin then :cousin
+  when :grandparent then :grandchild
+  when :grandchild then :grandparent
+  else nil
   end
+
+  return unless inverse_as
+
+  unless UserRelation.exists?(user: relation, relation: user, relation_as: inverse_as)
+    UserRelation.create(user: relation, relation: user, relation_as: inverse_as)
+  end
+end
 end

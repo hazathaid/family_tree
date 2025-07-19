@@ -1,0 +1,30 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center mb-6">Log in to your account</h2>
+
+    <%= form_with(model: resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-4" }) do |f| %>
+      <div>
+        <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200" %>
+      </div>
+
+      <div>
+        <%= f.label :password, class: "block text-sm font-medium text-gray-700" %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200" %>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, class: "ml-2 block text-sm text-gray-900" %>
+        </div>
+
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "text-sm text-indigo-600 hover:text-indigo-900" %>
+      </div>
+
+      <div>
+        <%= f.submit "Log in", class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700" %>
+      </div>
+    <% end %>
+  </div>
+</div>
