@@ -33,13 +33,13 @@ relationships = [
   { source: "Aida Sri Yulistiani", target: "Amelia Nur Fauza", relation: :child, child_order: 1 },
   { source: "Abdul Sobur", target: "Amelia Nur Fauza", relation: :child, child_order: 1 },
   { source: "Aida Sri Yulistiani", target: "Fawwaz Muhammad Naufal", relation: :child, child_order: 2 },
-  { source: "Abdul Sobur", target: "Fawwaz Muhammad Naufal", relation: :child, child_order: 2 }
+  { source: "Abdul Sobur", target: "Fawwaz Muhammad Naufal", relation: :child, child_order: 2 },
   { source: "Ineu Herlinawati", target: "Hilma Nadia Yulian", relation: :child, child_order: 1 },
   { source: "Asep", target: "Hilma Nadia Yulian", relation: :child, child_order: 1 },
   { source: "Erwin Solahudin", target: "Shafa Nur Athiyyah Zahra", relation: :child, child_order: 1 },
-  { source: "Iin Haniyati", target: "Shafa Nur Athiyyah Zahra", relation: :child, child_order: 1 }
+  { source: "Iin Haniyati", target: "Shafa Nur Athiyyah Zahra", relation: :child, child_order: 1 },
   { source: "Erwin Solahudin", target: "Aqila Muhammad Daffa", relation: :child, child_order: 2 },
-  { source: "Iin Haniyati", target: "Aqila Muhammad Daffa", relation: :child, child_order: 2 }
+  { source: "Iin Haniyati", target: "Aqila Muhammad Daffa", relation: :child, child_order: 2 },
   { source: "Irwan Firmansyah", target: "Muhammad Najib Al Fatih", relation: :child, child_order: 1 },
   { source: "Dina Kamalasari", target: "Muhammad Najib Al Fatih", relation: :child, child_order: 1 },
   { source: "Irwan Firmansyah", target: "Muhammad Abrisam Al Farizy", relation: :child, child_order: 2 },
